@@ -4,349 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brittany Luke | Geospatial Analyst</title>
-  <style>
-    /* --- Palette --- */
-    :root {
-      --green-dark:   #2d6a4f;
-      --green-mid:    #52796f;
-      --green-light:  #cde8d0;
-      --blue-dark:    #1d4e6e;
-      --blue-mid:     #457b9d;
-      --blue-light:   #d0e8f0;
-      --stone:        #f4f1eb;
-      --stone-dark:   #e0dbd0;
-      --text:         #1e2a22;
-      --text-muted:   #4a5a50;
-      --white:        #ffffff;
-    }
-
-    /* --- Reset & Base --- */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Georgia', serif;
-      background-color: var(--stone);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    /* --- Navigation --- */
-    nav {
-      background-color: var(--green-dark);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav .logo {
-      color: var(--white);
-      font-size: 1.1rem;
-      letter-spacing: 0.05em;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-
-    nav ul a {
-      color: var(--green-light);
-      text-decoration: none;
-      font-family: 'Arial', sans-serif;
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    nav ul a:hover { color: var(--white); }
-
-    /* --- Hero --- */
-    .hero {
-      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--green-dark) 60%, var(--green-mid) 100%);
-      color: var(--white);
-      padding: 5rem 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Topographic ring decorations */
-    .hero::before {
-      content: '';
-      position: absolute;
-      width: 600px;
-      height: 600px;
-      border: 2px solid rgba(255,255,255,0.06);
-      border-radius: 50%;
-      top: -100px;
-      left: -100px;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      border: 2px solid rgba(255,255,255,0.06);
-      border-radius: 50%;
-      bottom: -80px;
-      right: -60px;
-    }
-
-    /* Hero content sits above the rings */
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .hero-photo {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: top;
-      border: 4px solid rgba(255,255,255,0.4);
-      margin-bottom: 1.5rem;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      letter-spacing: 0.04em;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero .subtitle {
-      font-family: 'Arial', sans-serif;
-      font-size: 1.1rem;
-      color: var(--green-light);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.85);
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.75rem 2rem;
-      background-color: transparent;
-      border: 2px solid var(--green-light);
-      color: var(--green-light);
-      text-decoration: none;
-      font-family: 'Arial', sans-serif;
-      font-size: 0.9rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .btn:hover {
-      background-color: var(--green-light);
-      color: var(--green-dark);
-    }
-
-    /* --- Sections --- */
-    section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--green-mid);
-      margin-bottom: 0.5rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: var(--green-dark);
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid var(--green-light);
-      padding-bottom: 0.5rem;
-    }
-
-    /* --- About --- */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    .about-grid p { color: var(--text-muted); margin-bottom: 1rem; }
-
-    .skills-list {
-      background: var(--white);
-      border-left: 4px solid var(--blue-mid);
-      padding: 1.5rem;
-    }
-
-    .skills-list h3 {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--blue-dark);
-      margin-bottom: 1rem;
-    }
-
-    .skills-list ul { list-style: none; }
-
-    .skills-list li {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      padding: 0.3rem 0;
-      border-bottom: 1px solid var(--stone-dark);
-    }
-
-    .skills-list li:last-child { border-bottom: none; }
-
-    /* --- Portfolio Grid --- */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: var(--white);
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-    }
-
-    .card-img {
-      height: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-    }
-
-    .card-img.green { background: linear-gradient(135deg, var(--green-dark), var(--green-mid)); }
-    .card-img.blue  { background: linear-gradient(135deg, var(--blue-dark),  var(--blue-mid));  }
-    .card-img.mixed { background: linear-gradient(135deg, var(--blue-dark),  var(--green-mid)); }
-
-    .card-body { padding: 1.25rem; }
-
-    .card-tag {
-      font-family: 'Arial', sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--blue-mid);
-      margin-bottom: 0.4rem;
-    }
-
-    .card h3 { font-size: 1.1rem; color: var(--text); margin-bottom: 0.5rem; }
-    .card p  { font-size: 0.9rem; color: var(--text-muted); }
-
-    /* --- Contact --- */
-    .contact-section {
-      background: var(--green-dark);
-      color: var(--white);
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-
-    .contact-section h2 { color: var(--green-light); border-color: var(--green-mid); }
-    .contact-section p  { color: rgba(255,255,255,0.8); margin-bottom: 2rem; }
-
-    .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-
-    .contact-links a {
-      color: var(--green-light);
-      text-decoration: none;
-      font-family: 'Arial', sans-serif;
-      font-size: 0.9rem;
-      letter-spacing: 0.08em;
-      border-bottom: 1px solid var(--green-mid);
-      padding-bottom: 2px;
-    }
-
-    .contact-links a:hover { color: var(--white); border-color: var(--white); }
-
-    /* --- Footer --- */
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      font-family: 'Arial', sans-serif;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      background: var(--stone-dark);
-    }
-
-    /* --- Divider --- */
-    .divider {
-      height: 4px;
-      background: linear-gradient(to right, var(--green-light), var(--blue-light), var(--green-light));
-    }
-
-    /* --- Lightbox --- */
-    .card img { cursor: zoom-in; }
-
-    #lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-      cursor: zoom-out;
-    }
-
-    #lightbox.open { display: flex; }
-
-    #lightbox img {
-      max-width: 90vw;
-      max-height: 90vh;
-      object-fit: contain;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-    }
-
-    #lightbox-close {
-      position: absolute;
-      top: 1rem;
-      right: 1.5rem;
-      color: white;
-      font-size: 2rem;
-      cursor: pointer;
-      line-height: 1;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <!-- Navigation -->
   <nav>
-    <span class="logo">Brittany Luke</span>
+    <a href="index.html" class="logo">Brittany Luke</a>
+    <button class="hamburger" aria-label="Menu" onclick="document.querySelector('nav ul').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="professional.html">Professional</a></li>
+      <li><a href="cartography.html">Cartography</a></li>
+      <li><a href="web-maps.html">Web Maps</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -408,42 +80,38 @@
     <h2>Portfolio</h2>
     <div class="portfolio-grid">
 
-      <div class="card">
-        <img src="map-gisci-2025.png" alt="America's National Parks map" style="width:100%; height:160px; object-fit:cover; display:block;">
-        <div class="card-body">
-          <p class="card-tag">Cartography &mdash; 🏆 3rd Place, GISCI Map Contest 2025</p>
-          <h3>America's National Parks: When and Where We Visit</h3>
-          <p>A cartographic look at national park visitation patterns — showing peak seasons by park, the top 10 parks by 2024 visitation, year-over-year rank changes, and a record-breaking total visitor count.</p>
+      <a href="professional.html" class="card-link">
+        <div class="card">
+          <img src="GeoAI.png" alt="GeoAI pool detection project" style="width:100%; height:160px; object-fit:cover; display:block;">
+          <div class="card-body">
+            <p class="card-tag">Professional Projects</p>
+            <h3>GIS Solutions &amp; Analysis</h3>
+            <p>Applied GIS projects for government agencies &mdash; drone mapping, GeoAI, dashboards, and web applications.</p>
+          </div>
         </div>
-      </div>
+      </a>
 
-      <div class="card">
-        <img src="SunsetHillCemetery.jpg" alt="Sunset Hill Cemetery drone imagery" style="width:100%; height:160px; object-fit:cover; display:block;">
-        <div class="card-body">
-          <p class="card-tag">Remote Sensing &mdash; UAS Imagery</p>
-          <h3>Sunset Hill Cemetery Mapping</h3>
-          <p>Flew a drone to collect high-resolution aerial imagery of a local cemetery, supporting the development of a cemetery mapping application for the town. Part 107 certified flight operations.</p>
+      <a href="cartography.html" class="card-link">
+        <div class="card">
+          <img src="map-gisci-2025.png" alt="America's National Parks map" style="width:100%; height:160px; object-fit:cover; display:block;">
+          <div class="card-body">
+            <p class="card-tag">Cartography</p>
+            <h3>Maps &amp; Cartographic Design</h3>
+            <p>Contest-winning maps, the 30 Day Map Challenge, and academic cartography work.</p>
+          </div>
         </div>
-      </div>
+      </a>
 
-      <div class="card">
-        <img src="GeoAI.png" alt="GeoAI pool detection project" style="width:100%; height:160px; object-fit:cover; display:block;">
-        <div class="card-body">
-          <p class="card-tag">Spatial Analysis &mdash; GeoAI</p>
-          <h3>Pool Detection for Tax Assessment</h3>
-          <p>Used AI-driven pool detection on county aerial imagery to identify parcels with unreported pools in the tax assessor records. Built a repeatable workflow that automatically unflags parcels as tax data is updated, helping the county recover lost revenue.</p>
+      <a href="web-maps.html" class="card-link">
+        <div class="card">
+          <img src="30day-map-challenge.png" alt="30 Day Map Challenge 2025" style="width:100%; height:160px; object-fit:cover; display:block;">
+          <div class="card-body">
+            <p class="card-tag">Web Maps</p>
+            <h3>Interactive Web Maps</h3>
+            <p>Web-based maps and applications built with Leaflet, ArcGIS Online, and more.</p>
+          </div>
         </div>
-      </div>
-
-      <div class="card">
-        <img src="30day-map-challenge.png" alt="30 Day Map Challenge 2025" style="width:100%; height:160px; object-fit:cover; display:block;">
-        <div class="card-body">
-          <p class="card-tag">Cartography &mdash; 30 Day Map Challenge 2025</p>
-          <h3>30 Day Map Challenge 2025</h3>
-          <p>A collection of 30 maps created in 30 days, each following a daily theme. Explore the full repository to see the range of techniques, styles, and datasets used throughout the challenge.</p>
-          <a href="https://github.com/beluke/30day-map-challenge-2025" target="_blank" style="display:inline-block; margin-top:0.75rem; font-family:Arial,sans-serif; font-size:0.85rem; color:var(--blue-mid); text-decoration:none; border-bottom:1px solid var(--blue-light);">View on GitHub &rarr;</a>
-        </div>
-      </div>
+      </a>
 
     </div>
   </section>
@@ -463,27 +131,6 @@
       </div>
     </section>
   </div>
-
-  <!-- Lightbox -->
-  <div id="lightbox">
-    <span id="lightbox-close">&times;</span>
-    <img id="lightbox-img" src="" alt="">
-  </div>
-
-  <script>
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-
-    document.querySelectorAll('.card img').forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.classList.add('open');
-      });
-    });
-
-    lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
-  </script>
 
   <footer>
     &copy; 2026 Brittany Luke &mdash; Geospatial Analyst

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartography | Brittany Luke</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="logo">Brittany Luke</a>
+    <button class="hamburger" aria-label="Menu" onclick="document.querySelector('nav ul').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="professional.html">Professional</a></li>
+      <li><a href="cartography.html" class="active">Cartography</a></li>
+      <li><a href="web-maps.html">Web Maps</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> &rsaquo; Cartography
+  </div>
+
+  <!-- Subpage Hero -->
+  <div class="subpage-hero">
+    <h1>Cartography</h1>
+    <p>Award-winning maps, challenge entries, and academic cartographic work.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Awards Section -->
+  <div class="gallery-section">
+    <p class="section-label">Recognition</p>
+    <h2>Awards &amp; Contests</h2>
+
+    <div class="gallery-featured">
+
+      <!-- GISCI 2025 -->
+      <div class="gallery-featured-item">
+        <img src="map-gisci-2025.png" alt="America's National Parks: When and Where We Visit" loading="lazy">
+        <div class="item-info">
+          <span class="award-badge">3rd Place &mdash; GISCI Map Contest 2025</span>
+          <h3>America's National Parks: When and Where We Visit</h3>
+          <p>A cartographic look at national park visitation patterns &mdash; showing peak seasons by park, the top 10 parks by 2024 visitation, year-over-year rank changes, and a record-breaking total visitor count.</p>
+        </div>
+      </div>
+
+      <!-- WiGIS 2026 -->
+      <div class="pdf-card">
+        <object data="BrittanyLuke_WiGISMapContest_2026.pdf" type="application/pdf">
+          <p style="padding:2rem; text-align:center; color:var(--text-muted);">
+            PDF preview not available in this browser.<br>
+            <a href="BrittanyLuke_WiGISMapContest_2026.pdf" class="download-link">Download PDF</a>
+          </p>
+        </object>
+        <div class="item-info">
+          <h3>WiGIS Map Contest 2026</h3>
+          <p>Entry for the Women in GIS 2026 map contest.</p>
+          <a href="BrittanyLuke_WiGISMapContest_2026.pdf" class="download-link" download>Download PDF &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- WiGIS 2025 -->
+    <div class="pdf-card" style="max-width:600px; margin-bottom:3rem;">
+      <object data="assets/cartography/wigis-2025-hummingbird.pdf" type="application/pdf">
+        <p style="padding:2rem; text-align:center; color:var(--text-muted);">
+          PDF preview not available in this browser.<br>
+          <a href="assets/cartography/wigis-2025-hummingbird.pdf" class="download-link">Download PDF</a>
+        </p>
+      </object>
+      <div class="item-info">
+        <h3>The Journey of the Rufous Hummingbird</h3>
+        <p>WiGIS Map Contest 2025 entry exploring the migration patterns of the Rufous Hummingbird.</p>
+        <a href="assets/cartography/wigis-2025-hummingbird.pdf" class="download-link" download>Download PDF &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 30 Day Map Challenge -->
+  <div class="gallery-section">
+    <p class="section-label">Challenge</p>
+    <h2>30 Day Map Challenge 2025</h2>
+
+    <div class="gallery-featured-item" style="max-width:700px; margin-bottom:1.5rem;">
+      <img src="30day-map-challenge.png" alt="30 Day Map Challenge 2025 collage" loading="lazy">
+      <div class="item-info">
+        <h3>30 Day Map Challenge 2025</h3>
+        <p>A collection of 30 maps created in 30 days, each following a daily theme. Techniques range from static cartography to interactive web maps across a variety of datasets.</p>
+        <a href="https://github.com/beluke/30day-map-challenge-2025" target="_blank" class="btn" style="margin-top:0.75rem;">View on GitHub &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Academic Maps Gallery -->
+  <div class="gallery-section">
+    <p class="section-label">Academic</p>
+    <h2>Maps &amp; Analysis</h2>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-thumb">
+        <img src="assets/cartography/solar-power-suitability.png" alt="Solar Power Suitability Map" loading="lazy">
+        <div class="thumb-caption">Solar Power Suitability Analysis</div>
+      </div>
+
+      <div class="gallery-thumb">
+        <img src="assets/cartography/cost-distance-analysis.png" alt="Cost Distance Analysis" loading="lazy">
+        <div class="thumb-caption">Cost Distance Analysis</div>
+      </div>
+
+      <div class="gallery-thumb">
+        <img src="assets/cartography/tornado-relief-sites.png" alt="Tornado Relief Sites" loading="lazy">
+        <div class="thumb-caption">Tornado Emergency Relief Sites</div>
+      </div>
+
+      <div class="gallery-thumb">
+        <img src="assets/cartography/vineyard-sites.png" alt="Suitable Vineyard Sites" loading="lazy">
+        <div class="thumb-caption">Suitable Vineyard Site Selection</div>
+      </div>
+
+      <div class="gallery-thumb">
+        <img src="assets/cartography/voter-registration.png" alt="Voter Registration Map" loading="lazy">
+        <div class="thumb-caption">Voter Registration Analysis</div>
+      </div>
+
+      <div class="gallery-thumb">
+        <img src="assets/cartography/zoning-map.png" alt="Zoning Map" loading="lazy">
+        <div class="thumb-caption">Zoning Map</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.gallery-featured-item img, .gallery-thumb img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('open');
+      });
+    });
+
+    lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
+  </script>
+
+  <footer>
+    &copy; 2026 Brittany Luke &mdash; Geospatial Analyst
+  </footer>
+
+</body>
+</html>

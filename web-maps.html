@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Maps | Brittany Luke</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="logo">Brittany Luke</a>
+    <button class="hamburger" aria-label="Menu" onclick="document.querySelector('nav ul').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="professional.html">Professional</a></li>
+      <li><a href="cartography.html">Cartography</a></li>
+      <li><a href="web-maps.html" class="active">Web Maps</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> &rsaquo; Web Maps
+  </div>
+
+  <!-- Subpage Hero -->
+  <div class="subpage-hero">
+    <h1>Interactive Web Maps</h1>
+    <p>Web-based maps and applications built with Leaflet, ArcGIS Online, and more.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Link Cards -->
+  <div class="link-cards">
+
+    <!-- 30 Day Map Challenge -->
+    <div class="link-card">
+      <img src="30day-map-challenge.png" alt="30 Day Map Challenge 2025" loading="lazy">
+      <div class="link-card-text">
+        <h3>30 Day Map Challenge 2025</h3>
+        <p>A collection of 30+ interactive web maps created during the November 2025 challenge. Each map follows a daily theme &mdash; from points and lines to hexagons, raster data, and projections &mdash; using Leaflet.js and a variety of open data sources.</p>
+        <a href="https://github.com/beluke/30day-map-challenge-2025" target="_blank" class="btn">View on GitHub &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2026 Brittany Luke &mdash; Geospatial Analyst
+  </footer>
+
+</body>
+</html>

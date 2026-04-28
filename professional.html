@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Projects | Brittany Luke</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="logo">Brittany Luke</a>
+    <button class="hamburger" aria-label="Menu" onclick="document.querySelector('nav ul').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="professional.html" class="active">Professional</a></li>
+      <li><a href="cartography.html">Cartography</a></li>
+      <li><a href="web-maps.html">Web Maps</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> &rsaquo; Professional Projects
+  </div>
+
+  <!-- Subpage Hero -->
+  <div class="subpage-hero">
+    <h1>Professional Projects</h1>
+    <p>Applied GIS solutions for regional and federal government agencies.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Case Studies -->
+  <div class="case-studies">
+
+    <!-- 1. GeoAI Pool Detection -->
+    <div class="case-study-card">
+      <img src="GeoAI.png" alt="GeoAI pool detection project" loading="lazy">
+      <div class="case-study-text">
+        <p class="cs-label">GeoAI &middot; County Government</p>
+        <h3>Pool Detection for Tax Assessment</h3>
+        <p><strong>Challenge:</strong> County tax assessor records did not reflect unreported residential pools, resulting in lost property tax revenue.</p>
+        <p><strong>Approach:</strong> Used AI-driven pool detection on county aerial imagery to identify parcels with pools missing from the tax records.</p>
+        <p><strong>Outcome:</strong> Built a repeatable workflow that automatically unflags parcels as tax data is updated, helping the county recover lost revenue.</p>
+      </div>
+    </div>
+
+    <!-- 2. Cemetery Drone Mapping -->
+    <div class="case-study-card reverse">
+      <img src="SunsetHillCemetery.jpg" alt="Sunset Hill Cemetery drone imagery" loading="lazy">
+      <div class="case-study-text">
+        <p class="cs-label">Remote Sensing &middot; UAS Imagery</p>
+        <h3>Sunset Hill Cemetery Mapping</h3>
+        <p><strong>Challenge:</strong> A local town needed high-resolution aerial imagery to support the development of a cemetery mapping application.</p>
+        <p><strong>Approach:</strong> Planned and flew Part 107 certified drone operations to collect imagery across the cemetery grounds.</p>
+        <p><strong>Outcome:</strong> Delivered orthorectified aerial imagery used as the base layer for the town's cemetery mapping application.</p>
+      </div>
+    </div>
+
+    <!-- 3. Lowndes County Water/Sewer -->
+    <div class="case-study-card">
+      <img src="assets/professional/lowndes-water-sewer.jpg" alt="Lowndes County water and sewer map" loading="lazy">
+      <div class="case-study-text">
+        <p class="cs-label">Web GIS &middot; Regional Government</p>
+        <h3>Lowndes County Water &amp; Sewer Mapping</h3>
+        <p><strong>Challenge:</strong> County utilities staff needed an accessible way to view and query water and sewer infrastructure data in the field.</p>
+        <p><strong>Approach:</strong> Developed a web map application with ArcGIS integrating utility infrastructure data, traffic counts, and parcel information.</p>
+        <p><strong>Outcome:</strong> Provided field crews and office staff with a centralized, interactive map for infrastructure management and planning.</p>
+      </div>
+    </div>
+
+    <!-- 4. Mosquito Surveillance Dashboard -->
+    <div class="case-study-card reverse">
+      <img src="assets/professional/mosquito-dashboard.jpg" alt="Mosquito surveillance dashboard" loading="lazy">
+      <div class="case-study-text">
+        <p class="cs-label">Dashboard &middot; Public Health</p>
+        <h3>Mosquito Surveillance Dashboard</h3>
+        <p><strong>Challenge:</strong> Mosquito control operations needed a centralized view of trap data, treatment areas, and surveillance results.</p>
+        <p><strong>Approach:</strong> Built an interactive dashboard consolidating mosquito trap data with spatial visualizations of treatment zones and species counts.</p>
+        <p><strong>Outcome:</strong> Enabled data-driven decision-making for targeted mosquito control operations.</p>
+      </div>
+    </div>
+
+    <!-- 5. Sales Trending Analysis -->
+    <div class="case-study-card">
+      <img src="assets/professional/sales-trending.jpg" alt="Sales trending analysis" loading="lazy">
+      <div class="case-study-text">
+        <p class="cs-label">Spatial Analysis &middot; Business Intelligence</p>
+        <h3>Sales Trending Analysis</h3>
+        <p><strong>Challenge:</strong> Needed to identify geographic patterns in sales performance to support strategic planning and resource allocation.</p>
+        <p><strong>Approach:</strong> Analyzed multi-year sales data spatially to identify trending markets, coverage gaps, and regional performance patterns.</p>
+        <p><strong>Outcome:</strong> Delivered actionable spatial insights that informed territory planning and market strategy.</p>
+      </div>
+    </div>
+
+    <!-- 6. Transit Dashboard -->
+    <div class="case-study-card reverse">
+      <img src="assets/professional/transit-dashboard.png" alt="Transit dashboard" loading="lazy">
+      <div class="case-study-text">
+        <p class="cs-label">Dashboard &middot; Transportation</p>
+        <h3>Transit Dashboard</h3>
+        <p><strong>Challenge:</strong> Transit operations needed a real-time view of route performance, ridership, and service metrics.</p>
+        <p><strong>Approach:</strong> Designed a geographic dashboard integrating transit route data with ridership statistics and service area coverage.</p>
+        <p><strong>Outcome:</strong> Provided transit planners with an at-a-glance tool for monitoring and optimizing service delivery.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.case-study-card img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('open');
+      });
+    });
+
+    lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
+  </script>
+
+  <footer>
+    &copy; 2026 Brittany Luke &mdash; Geospatial Analyst
+  </footer>
+
+</body>
+</html>
